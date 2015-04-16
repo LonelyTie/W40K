@@ -2,6 +2,7 @@
 
 <?php
 
+
 //recuperation optionnel du type de vaisseau
 	echo "<br />";
 	echo "Navire de Class Frigate : <br />";
@@ -10,9 +11,9 @@
 	echo "Length : ".Frigate::HEIGHT."<br />";
 	echo "Width : ".Frigate::WIDTH."<br />";
 	echo "Speed : ".Frigate::SPEED."<br />";
-	echo "Weapon(s) :"."<br />";
-
-	echo "PP : ".Frigate::PP."<br />";
+	foreach ($ship->getWeapon() as $elem)
+		echo "Weapon(s) :".$elem." ";
+	echo "<br />PP: ".Frigate::PP."<br />";
 	echo "Inertie : ".Frigate::MOVE."<br />";
 ?>
 

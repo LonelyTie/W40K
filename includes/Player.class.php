@@ -29,8 +29,52 @@
 				return TRUE;
 		}
 
-		public function GetShipObject($player, $i, $j) {
-
+		public function getShipObject($h, $w) {
+			foreach ($this->getShips() as $elem)
+			{
+				$coords = $elem->getCoords();
+				$dir = $coords['dir'];
+				$w1 = $coords['x'];
+				$h1 = $coords['y'];
+				$length = $elem->getLength() + 1;
+				$i = 0;
+				if ($dir == 2)
+				{
+					while ($i < $length)
+					{
+						if ($h1 - $i == $h && $w1 == $w)
+							return ($elem);
+						$i++;
+					}
+				}
+				else if ($dir == 1)
+				{
+					while ($i < $length)
+					{
+						if ($h1 + $i == $h && $w1 == $w)
+							return ($elem);
+						$i++;
+					}
+				}
+				else if ($dir == 4)
+				{
+					while ($i < $length)
+					{
+						if ($h1 == $h && $w1 - $i == $w)
+							return ($elem);
+						$i++;
+					}
+				}
+				else if ($dir == 8)
+				{
+					while ($i < $length)
+					{
+						if ($h1 == $h && $w1 + $i == $w)
+							return ($elem);
+						$i++;
+					}
+				}
+			}
 
 		}
 
