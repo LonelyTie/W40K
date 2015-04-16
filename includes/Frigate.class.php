@@ -9,9 +9,10 @@
 		const	MOVE			= 4;
 		const	WIDTH			= 1;
 		const	HEIGHT			= 4;
+		const	MAXPC			= 5;
 	
 		protected $_id;
-		protected $_pc			=	5;
+		protected $_pc	=	5;
 		protected $_pp_spent	=	0;
 		protected $_moving		=	FALSE;
 		protected $_prevmov		=	0;
@@ -39,6 +40,11 @@
 		public function		getPpspent()	{ return ($this->_pp_spend);	}
 		public function		getCoords()		{ return ($this->_coords);		}
 		public function		getLength()		{ return (self::HEIGHT);		}
+
+		public function		setPc($v){ 
+			if ($v == 1 && ($this->getPc() + $v) <= self::MAXPC)
+				$this->_pc += $v;
+		}	
 
 		private function	setCoords($x, $y, $dir)
 		{

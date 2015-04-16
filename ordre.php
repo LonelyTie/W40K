@@ -26,7 +26,7 @@
 	Boost Armes : <input type="number" name="ppWeapon" min="0"/><br />
 	Reparations : <input type="number" name="ppRepear" min="0" /><br />
 	Boost deplacement : <input type="number" name="ppMove" min="0"/>&nbsp;&nbsp;
-	<input type="submit" name="submit" value="OK"><br />
+	<input type="submit" name="submit" value="Valider"><br />
 	
 </form>
 
