@@ -29,6 +29,11 @@
 				return TRUE;
 		}
 
+		public function GetShipObject($player, $i, $j) {
+
+
+		}
+
 		function		__destruct()
 		{
 			if (self::$verbose)

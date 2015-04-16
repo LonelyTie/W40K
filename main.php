@@ -8,14 +8,17 @@ $game = unserialize($_SESSION['save']);
 $p1 = unserialize($_SESSION['player1']);
 $p2 = unserialize($_SESSION['player2']);
 ?>
-<html>
-	<head>
-		<link rel="stylesheet" href="css/style.css">
-	</head>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+	<link rel="stylesheet" href="css/style.css">
+</head>
 	<body>
 		<div id="content">
 			<div id="box">
 <?php
+	echo '<h1>'.Game::NAME.'</h1>';
 include('map.php');
 echo "<br />";
 echo "<br />";
