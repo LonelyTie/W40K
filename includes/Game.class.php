@@ -50,13 +50,16 @@
 		 * */
 		public function		add_ship( $player_id, $ships )
 		{
+			
 			foreach ($ships as $ship)
 			{
-				$y = $ship['y'];
-				$x = $ship['x'];
-				$i = 0;
+				$coords = $ship->getCoords();
+				$y		= $coords['y'];
+				$x		= $coords['x'];
+				$dir	= $coords['dir'];
+				$i		= 0;
 
-				if ($ship['dir'] == self::NORTH)
+				if ($dir == self::NORTH)
 				{
 					while ($i < 4)
 					{
@@ -64,7 +67,7 @@
 						$i++;
 					}
 				}
-				else if ($ship['dir'] == self::SOUTH)
+				else if ($dir == self::SOUTH)
 				{
 					while ($i < 4)
 					{
@@ -72,7 +75,7 @@
 						$i++;
 					}
 				}
-				else if ($ship['dir'] == self::EAST)
+				else if ($dir == self::EAST)
 				{
 					while ($i < 4)
 					{
@@ -80,7 +83,7 @@
 						$i++;
 					}
 				}
-				else if ($ship['dir'] == self::WEST)
+				else if ($dir == self::WEST)
 				{
 					while ($i < 4)
 					{

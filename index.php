@@ -3,26 +3,21 @@
 
 	require("includes/Game.class.php");
 	require("includes/Player.class.php");
+	require("includes/Ship.class.php");
+	require("includes/Frigate.class.php");
 
 	Game::$verbose = TRUE;
 	Player::$verbose = TRUE;
+	Ship::$verbose = TRUE;
 
 	$ships_p1	= array (
-					array ("type" => 'Frigate',
-							"y" => 1,
-							"x" => 10,
-							"dir" => Game::EAST)
+					new Frigate(array ('name' => 'bateau de Raf1', 'x' => 0, 'y' => 0, 'dir' => Game::NORTH)),
+					new Frigate(array ('name' => 'bateau de Raf2', 'x' => 50, 'y' => 20, 'dir' => Game::EAST)),
 				);
 
 	$ships_p2	= array (
-					array ("type" => 'Frigate',
-							"y" => 78,
-							"x" => 68,
-							"dir" => Game::WEST),
-					array ("type" => 'Frigate',
-							"y" => 50,
-							"x" => 50,
-							"dir" => Game::NORTH)
+					new Frigate(array ('name' => 'bateau de Raf3', 'x' => 20, 'y' => 3, 'dir' => Game::NORTH)),
+					new Frigate(array ('name' => 'bateau de Raf4', 'x' => 10, 'y' => 40, 'dir' => Game::EAST)),
 				);
 
 	$player1	= array (
@@ -44,6 +39,7 @@
 
 	$game->add_ship('1', $p1->getShips());
 	$game->add_ship('2', $p2->getShips());
+
 
 	echo $game;
 
