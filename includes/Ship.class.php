@@ -3,10 +3,11 @@
 	class Ship
 	{
 		protected		$_name;
-		protected		$_shieldi = 0;
+		protected		$_shield = 0;
 		protected		$_sprite;
 		protected		$_coords;
 
+		use Order, Movement, Shot;
 	}
 
 ?>
