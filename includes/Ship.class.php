@@ -10,7 +10,7 @@
 		protected			$_coords;
 		public static		$verbose	=	FALSE;
 		protected $_id;
-		protected $_pp_spent	=	0;
+		protected $_ppspent	=	0;
 		protected $_moving		=	FALSE;
 		protected $_prevmov		=	0;
 		protected $_activated	=	FALSE;
@@ -25,13 +25,39 @@
 		public function		getWeapon()		{ return ($this->_weapon);		}
 		public function		getPrevmov()	{ return ($this->_prevmov);		}
 		public function		getPc()			{ return ($this->_pc);			}
-		public function		getPpspent()	{ return ($this->_pp_spend);	}
+		public function		getShield()			{ return ($this->_shield);			}
+		public function		getPpspent()	{ return ($this->_ppspent);	}
 		public function		getCoords()		{ return ($this->_coords);		}
 		public function		getLength()		{ return (static::HEIGHT);		}
 
-		public function		setPc($v){ 
-			if ($v == 1 && ($this->getPc() + $v) <= self::MAXPC)
-				$this->_pc += $v;
+		public function		resetPpspent(){ 
+			$this->_pp_spent = 0;
+		}	
+
+		public function		incPpspent($v){ 
+			if (($this->getPpspent() + $v) <= static::PP)
+				$this->_ppspent += $v;
+			else
+				$this->_ppspent = static::PP;
+		}	
+
+		public function		incPc(){ 
+			if (($this->getPc() + 1) <= static::MAXPC)
+				$this->_pc++;
+		}	
+
+		public function		decPc(){ 
+			if (($this->getPc() - 1) <= static::MAXPC)
+				$this->_pc++;
+		}	
+
+		public function		incShield($v){ 
+				$this->_shield += $v;
+		}	
+
+		public function		decShield(){ 
+			if (($this->getShield() - 1) >=  0)
+				$this->_shield--;
 		}	
 
 		protected function	setCoords($x, $y, $dir)

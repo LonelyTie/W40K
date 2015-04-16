@@ -23,7 +23,7 @@
 			if (self::$verbose)
 				echo "New Frigate Ship: ".$this->_id." instanced<br>" . PHP_EOL;
 		}
-
+						
 		function		__destruct()
 		{
 			if (self::$verbose)
