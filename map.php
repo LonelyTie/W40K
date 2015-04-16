@@ -2,7 +2,6 @@
 
 $map = $game->getMap();
 
-$active = "player2";
 
 echo '<table>';
 	$i = 0;

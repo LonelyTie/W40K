@@ -1,6 +1,7 @@
 <?php
 
 	session_start();
+	require("includes/Dice.class.php");
 	require("includes/Game.class.php");
 	require("includes/Player.class.php");
 	require("includes/Ship.class.php");
@@ -40,7 +41,7 @@
 	$game->add_ship('1', $p1->getShips());
 	$game->add_ship('2', $p2->getShips());
 
-	echo '<h1><a href="main.php?preset=select">Let\'s kick some ass !</a></h1>';
+	echo '<h1><a href="main.php?preset=select&i=0&j=0">Let\'s kick some ass !</a></h1>';
 	$player1 = serialize($p1);
 	$player2 = serialize($p2);
 	$save = serialize($game);

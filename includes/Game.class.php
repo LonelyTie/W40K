@@ -12,6 +12,8 @@
 		private			$_map;
 		public static	$verbose	= False;
 
+		use Dice;
+
 		function			__construct()
 		{
 			if (self::$verbose)
