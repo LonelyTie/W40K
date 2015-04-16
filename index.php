@@ -1,6 +1,6 @@
-<pre>
 <?php
 
+	session_start();
 	require("includes/Game.class.php");
 	require("includes/Player.class.php");
 	require("includes/Ship.class.php");
@@ -40,7 +40,12 @@
 	$game->add_ship('1', $p1->getShips());
 	$game->add_ship('2', $p2->getShips());
 
-
-	echo $game;
+	echo '<h1><a href="main.php?preset=select">Let\'s kick some ass !</a></h1>';
+	$player1 = serialize($p1);
+	$player2 = serialize($p2);
+	$save = serialize($game);
+	$_SESSION['save'] = $save;
+	$_SESSION['player1'] = $player1;
+	$_SESSION['player2'] = $player2;
 
 ?>

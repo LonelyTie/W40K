@@ -3,8 +3,8 @@
 	class Game
 	{
 		const			NAME		= "Awesome Starships Battles In The Dark Grim Future Of The Grim Dark 41st Millenium";
-		const			WIDTH		= 80;
-		const			HEIGHT		= 80;
+		const			WIDTH		= 150;
+		const			HEIGHT		= 100;
 		const			NORTH		= 1;
 		const			SOUTH		= 2;
 		const			EAST		= 4;
