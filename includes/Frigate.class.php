@@ -38,12 +38,14 @@
 		public function		getPc()			{ return ($this->_pc);			}
 		public function		getPpspent()	{ return ($this->_pp_spend);	}
 		public function		getCoords()		{ return ($this->_coords);		}
+		public function		getLength()		{ return (self::HEIGHT);		}
 
 		private function	setCoords($x, $y, $dir)
 		{
 			$coords = array ('x' => $x, 'y' => $y, 'dir' => $dir);
 			$this->_coords	= $coords;
 		}
+
 
 		private function	setPrevmov($data)
 		{

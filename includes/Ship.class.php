@@ -10,7 +10,7 @@
 		protected			$_coords;
 		public static		$verbose	=	FALSE;
 
-		use Order, Movement, Shot;
+//		use Order, Movement, Shot;
 	}
 
 ?>
