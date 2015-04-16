@@ -29,6 +29,17 @@
 				return TRUE;
 		}
 
+		public	function	destroy_ship($id)
+		{
+			foreach ($this->_ships as $key => $val)
+			{
+				if ($val->getId() == $id)
+				{
+					unset($this->_ships[$key]);
+				}
+			}
+		}
+
 		public function getShipObject($h, $w) {
 			foreach ($this->getShips() as $elem)
 			{

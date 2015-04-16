@@ -1,6 +1,6 @@
+<pre>
 <?php
 
-	session_start();
 	require("includes/Game.class.php");
 	require("includes/Player.class.php");
 	require("includes/Ship.class.php");
@@ -43,13 +43,13 @@
 	$game->add_ship('2', $p2->getShips());
 
 	echo '<h1><a href="main.php?preset=select">Let\'s kick some ass !</a></h1>';
-	$player1 = serialize($p1);
-	$player2 = serialize($p2);
-	$save = serialize($game);
-	$_SESSION['save'] = $save;
-	$_SESSION['player1'] = $player1;
-	$_SESSION['player2'] = $player2;
 
 	$weapon = new NavalSpear();
-
+	
+	print_r($p1);
+	$p1->destroy_ship(1);
+	$p1->destroy_ship(2);
+	print_r($p1);
+	print_r($p1->getShips());
+	echo "loser:" . $game->looser($p1, $p2) . "..<br>";
 ?>

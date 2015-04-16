@@ -12,13 +12,28 @@
 		private			$_map;
 		public static	$verbose	= False;
 
-		use Dice;
+//		use Dice;
 
 		function			__construct()
 		{
 			if (self::$verbose)
 				echo "New Game instanced" . PHP_EOL;
 			$this->init_map();
+		}
+
+		public		function		looser($p1, $p2)
+		{
+			$i = 0;
+			foreach ( $p1->getShips() as $e )
+				$i++;
+			if (!$i)
+				return (1);
+			$i = 0;
+			foreach ( $p2->getShips() as $e )
+				$i++;
+			if (!$i)
+				return (2);
+			return (0);
 		}
 
 		private		function		init_map()
