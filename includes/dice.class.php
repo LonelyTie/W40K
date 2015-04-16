@@ -1,6 +1,6 @@
 <?php
-class Dice
-{
+
+trait Dice{
 	private $_dice_list = array();
 
 	public function roll_the_dice($nb_dice)
@@ -16,6 +16,11 @@ class Dice
 	public function merge_dice()
 	{
 		return (array_sum($this->_dice_list));
+	}
+
+	public function reset_the_dice()
+	{
+		$this->_dice_list = array();
 	}
 }
 

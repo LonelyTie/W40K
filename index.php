@@ -1,6 +1,7 @@
 <?php
 
 	session_start();
+	require("includes/Dice.class.php");
 	require("includes/Game.class.php");
 	require("includes/Player.class.php");
 	require("includes/Ship.class.php");
