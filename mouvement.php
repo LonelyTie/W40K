@@ -1,5 +1,6 @@
-<?php
 
+<div id="info">
+<?php
 if (!isset($_POST['ppShield']))
 	$shield = 0;
 else
@@ -11,32 +12,59 @@ else
 
 if ($shield + $repair <= 10)
 {
+
+	if ($shield != 0)
+	{
+		echo "You've invested ".$shield." points in your shield, i'm sure you feel safer now";
+		$ship->incShield($shield);
+		$ship->incPpspent($shield);
+
+		echo "<br />";
+		echo "<br />";
+	}
+
 	if ($repair != 0)
 	{
+		echo "You've invested ".$repair." points in your repair, will it pay off ?";
+		echo "<br />";
+		$ship->incPpspent($repair);
 		$tab = $game->roll_the_dice($repair);
 		foreach ($tab as $elem)
 		{
-			echo "you rolled a : "
+			echo "you rolled a : ";
 			echo $elem;
-			echo 'for repair<br />';
-		//	if ($elem == 6)
+			echo ' for repair';
+			if ($elem == 6)
+			{
+				echo "   Well done Pc + 1 ! <br /> ";
+				$ship->incPc();
+			}
+			else
+				echo "   Too bad !  <br />";
 		}
-
 	}
-
-
+	$game->reset_the_dice();
 }
 else
 	echo "to many points attributed, nothing has been done. Keep playing";
 
+include("stat.php");
 
-
-
-echo $game->merge_dice();
-$game->reset_the_dice();
 
 
 $str = serialize($_POST);
 $_SESSION['pp'] = $str;
 
 ?>
+
+</div>
+
+<div id="info2">
+
+<?php
+$spend = 10 - $ship->getPpspent();
+	echo "You've spent ". $ship->getPpspent() . " PP points so far. ".$spend." to go !";	
+	echo "Ready to move";
+
+?>
+</div>
