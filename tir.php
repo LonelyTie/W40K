@@ -1,7 +1,5 @@
 <?php
 $victory = False;
-$recup = unserialize($_SESSION['pp']);
-	
 if (!isset($recup['ppWeapon']))
 	$weapon = 0;
 else
@@ -42,19 +40,15 @@ echo "<br />";
 					if ($ennemy->alive() == False)
 						$victory = True;
 				}
-	?>
-
-				<div id="info">
-<?php
-
 			}
-		if ($res != False)
+		if ($res != False && get_parent_class($target) == "Ship" )
 		{
+			echo '<div id="info">';
 			echo "Targeted Ship : <br />";
 			echo "Navire : ".Frigate::TYPE."<br />";
 			echo "<br />PP: ".Frigate::PP."<br />";
 			echo "Length : ".Frigate::HEIGHT."<br />";
-			echo "Shield : ".$target->getShield()."<br />";
+		//	echo "Shield : ".$target->getShield()."<br />";
 			echo "Pc : ".$target->getPc()."<br />";
 			echo "Speed : ".Frigate::SPEED."<br />";
 			foreach ($target->getWeapon() as $elem)
@@ -75,26 +69,24 @@ else
 </div>
 <div id="info2">
 <?php
-				if ($victory == True)
-				{
-					echo '<form action="victory.php" method="post">';
-					echo '<input type="submit" name="sumit" value="Claim Victory"/>';
-					echo '</form>';
-				}
-				else
-				{
-					$game->invertActive();
-					$ship->resetPpspent();
-					unset($_SESSION['ship']);
-					unset($_SESSION['pp']);
-					echo '<form action="main.php?preset=select" method="post">';
-					echo '<input type="submit" name="sumit" value="Next round"/>';
-					echo '</form>';
-				}
+
+
+		if ($victory == True)
+		{
+			echo '<form action="victory.php" method="post">';
+			echo '<input type="submit" name="sumit" value="Claim Victory"/>';
+			echo '</form>';
+		}
+		else
+		{
+			$game->invertActive();
+			$ship->resetPpspent();
+			unset($_SESSION['ship']);
+			unset($_SESSION['pp']);
+			echo '<form action="main.php?preset=select" method="post">';
+			echo '<input type="submit" name="sumit" value="Next round"/>';
+			echo '</form>';
+		}
 ?>
 </div>
-<?php
 
-
-
-?>
