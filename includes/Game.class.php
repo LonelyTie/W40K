@@ -10,15 +10,39 @@
 		const			EAST		= 4;
 		const			WEST		= 8;
 		private			$_map;
+		private			$_active		= "player2";
 		public static	$verbose	= False;
 
-//		use Dice;
+		use Dice;
 
 		function			__construct()
 		{
 			if (self::$verbose)
 				echo "New Game instanced" . PHP_EOL;
 			$this->init_map();
+		}
+
+		public function getActiveName() { return $this->_active;}
+
+		public function getActive($p1, $p2) { 
+			if ($this->_active == "player1")
+				return  $p1;
+			else
+				return  $p2;
+		}
+
+		public function getInactive($p1, $p2) { 
+			if ($this->_active == "player2")
+				return  $p1;
+			else
+				return  $p2;
+		}
+
+		public function invertActive() { 
+			if ($this->getActiveName() == "player2")
+				$this->_active = "player1";
+			else
+				$this->_active = "player2";
 		}
 
 		public		function		looser($p1, $p2)
@@ -109,6 +133,50 @@
 					}
 				}
 			}
+		}
+
+		public function		del_ship($player_id, $ship )
+		{
+			
+				$coords = $ship->getCoords();
+				$y		= $coords['y'];
+				$x		= $coords['x'];
+				$dir	= $coords['dir'];
+				echo $x;
+				$i		= 0;
+
+				if ($dir == self::NORTH)
+				{
+					while ($i < 4)
+					{
+						$this->_map[$y + $i][$x] = 0;
+						$i++;
+					}
+				}
+				else if ($dir == self::SOUTH)
+				{
+					while ($i < 4)
+					{
+						$this->_map[$y - $i][$x] = 0;
+						$i++;
+					}
+				}
+				else if ($dir == self::EAST)
+				{
+					while ($i < 4)
+					{
+						$this->_map[$y][$x - $i] = 0;
+						$i++;
+					}
+				}
+				else if ($dir == self::WEST)
+				{
+					while ($i < 4)
+					{
+						$this->_map[$y][$x + $i] = 0;
+						$i++;
+					}
+				}
 		}
 
 		public function		__toString()

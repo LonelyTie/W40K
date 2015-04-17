@@ -19,6 +19,7 @@
 			$this->_name	= $kwargs['name'];
 			$this->_id		= parent::$_i;
 			$this->setCoords($kwargs['x'], $kwargs['y'], $kwargs['dir']);
+			$this->_weapon[] = new NavalSpear;
 
 			if (self::$verbose)
 				echo "New Frigate Ship: ".$this->_id." instanced<br>" . PHP_EOL;

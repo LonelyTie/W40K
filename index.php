@@ -6,6 +6,7 @@
 	require("includes/Player.class.php");
 	require("includes/Ship.class.php");
 	require("includes/Frigate.class.php");
+	require('includes/NavalSpear.class.php');
 
 	Game::$verbose = TRUE;
 	Player::$verbose = TRUE;
@@ -13,12 +14,10 @@
 
 	$ships_p1	= array (
 					new Frigate(array ('name' => 'bateau de Raf1', 'x' => 0, 'y' => 0, 'dir' => Game::NORTH)),
-					new Frigate(array ('name' => 'bateau de Raf2', 'x' => 50, 'y' => 20, 'dir' => Game::EAST)),
 				);
 
 	$ships_p2	= array (
-					new Frigate(array ('name' => 'bateau de Raf3', 'x' => 20, 'y' => 3, 'dir' => Game::NORTH)),
-					new Frigate(array ('name' => 'bateau de Raf4', 'x' => 10, 'y' => 40, 'dir' => Game::EAST)),
+					new Frigate(array ('name' => 'bateau de Raf3', 'x' => 0, 'y' => 10, 'dir' => Game::NORTH)),
 				);
 
 	$player1	= array (

@@ -8,6 +8,6 @@
 	echo "Pc : ".$ship->getPc()."<br />";
 	echo "Speed : ".Frigate::SPEED."<br />";
 	foreach ($ship->getWeapon() as $elem)
-		echo "Weapon(s) :".$elem." ";
+		echo "Weapon(s) :".$elem->getName()." <br />";
 	echo "Inertie : ".Frigate::MOVE."<br />";
 ?>

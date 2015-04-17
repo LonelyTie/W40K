@@ -1,6 +1,7 @@
 <?php
 
-echo strtoupper("C'est au tour du joueur Un (couleur rouge).");
+$color = $game->getActiveName();
+echo 'C est au tour du '.$color;
 echo "<br />";
 echo "<br />";
 echo "Veuillez selectionner un navire pour commencer !";

@@ -65,6 +65,10 @@ $_SESSION['pp'] = $str;
 $spend = 10 - $ship->getPpspent();
 	echo "You've spent ". $ship->getPpspent() . " PP points so far. ".$spend." to go !";	
 	echo "Ready to move";
-
 ?>
+
+	<form action="main.php?preset=tir" method="post">
+		<input type="submit" name="submit" value="OK">
+	</form>
+
 </div>

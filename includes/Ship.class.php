@@ -13,8 +13,7 @@
 		protected			$_moving	=	FALSE;
 		protected			$_prevmov	=	0;
 		protected			$_activated	=	FALSE;
-		protected			$_weapon	=	array ("Naval_Spear");
-		protected			$coords;
+		protected			$_weapon = array();
 
 //		use Order, Movement, Shot;
 
@@ -36,6 +35,7 @@
 		public function		setPc($v){ 
 			if ($v == 1 && ($this->getPc() + $v) <= self::MAXPC)
 				$this->_pc += $v;
+		}
 
 		public function		resetPpspent(){ 
 			$this->_pp_spent = 0;
@@ -54,8 +54,8 @@
 		}	
 
 		public function		decPc(){ 
-			if (($this->getPc() - 1) <= static::MAXPC)
-				$this->_pc++;
+			if (($this->getPc() - 1) >= 0)
+				$this->_pc--;
 		}	
 
 		public function		incShield($v){ 

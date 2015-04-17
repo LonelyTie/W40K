@@ -1,12 +1,13 @@
 <?php
 session_start();
 require_once('includes/Ship.class.php');
+require_once('includes/NavalSpear.class.php');
 require_once('includes/Dice.class.php');
 require_once('includes/Frigate.class.php');
 require_once('includes/Player.class.php');
 require_once('includes/Game.class.php');
-$active = "player1";
 $game = unserialize($_SESSION['save']);
+$active = $game->getActiveName();
 $p1 = unserialize($_SESSION['player1']);
 $p2 = unserialize($_SESSION['player2']);
 if (array_key_exists('ship', $_SESSION))

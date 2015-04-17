@@ -9,6 +9,7 @@
 		const			S_SCOPE		= 30;
 		const			I_SCOPE		= 60;
 		const			L_SCOPE		= 90;
+		const			NAME		= "Naval Spear";
 
 		private			$_load		= 0;
 		private			$_used		= FALSE;
