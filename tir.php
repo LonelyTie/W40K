@@ -39,7 +39,8 @@ echo "<br />";
 				{
 					$game->del_ship($target->getId(), $target);
 					$ennemy->destroy_ship($target->getId());
-					$victory = True;
+					if ($ennemy->alive() == False)
+						$victory = True;
 				}
 	?>
 

@@ -32,6 +32,7 @@
 		protected function	setPrevmov($data)	{ $this->_prevmov = $data; }
 		protected function	setShield($data)	{ $this->_shield = $data; }
 
+
 		public function		setPc($v){ 
 			if ($v == 1 && ($this->getPc() + $v) <= self::MAXPC)
 				$this->_pc += $v;
