@@ -46,7 +46,7 @@ if ($shield + $repair <= 10)
 	$game->reset_the_dice();
 }
 else
-	echo "to many points attributed, nothing has been done. Keep playing";
+	echo "To many points attributed, nothing has been done. Keep playing";
 
 if (isset($ship))
 	include("stat.php");

@@ -15,7 +15,6 @@
 		protected			$_activated	=	FALSE;
 		protected			$_weapon = array();
 
-//		use Order, Movement, Shot;
 
 		public function		getName()		{ return ($this->_name);		}
 		public function		getMoving()		{ return ($this->_moving);		}

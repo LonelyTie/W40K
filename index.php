@@ -14,24 +14,24 @@
 	Ship::$verbose = False;
 
 	$ships_p1	= array (
-					new Frigate(array ('name' => 'bateau de Raf1', 'x' => 0, 'y' => 0, 'dir' => Game::NORTH)),
-					new Frigate(array ('name' => 'bateau de Raf1', 'x' => 40, 'y' => 90, 'dir' => Game::NORTH)),
-					new Frigate(array ('name' => 'bateau de Raf1', 'x' => 140, 'y' => 90, 'dir' => Game::NORTH)),
+					new Frigate(array ('name' => 'Ship of Raf1', 'x' => 0, 'y' => 0, 'dir' => Game::NORTH)),
+					new Frigate(array ('name' => 'Ship of Raf1', 'x' => 40, 'y' => 90, 'dir' => Game::NORTH)),
+					new Frigate(array ('name' => 'Ship of Raf1', 'x' => 140, 'y' => 90, 'dir' => Game::NORTH)),
 				);
 
 	$ships_p2	= array (
-					new Frigate(array ('name' => 'bateau de Raf1', 'x' => 0, 'y' => 40, 'dir' => Game::NORTH)),
-					new Frigate(array ('name' => 'bateau de Raf1', 'x' => 80, 'y' => 10, 'dir' => Game::NORTH)),
-					new Frigate(array ('name' => 'bateau de Raf1', 'x' => 120, 'y' => 10, 'dir' => Game::NORTH)),
+					new Frigate(array ('name' => 'Ship of Raf1', 'x' => 0, 'y' => 40, 'dir' => Game::NORTH)),
+					new Frigate(array ('name' => 'Ship of Raf1', 'x' => 80, 'y' => 10, 'dir' => Game::NORTH)),
+					new Frigate(array ('name' => 'Ship of Raf1', 'x' => 120, 'y' => 10, 'dir' => Game::NORTH)),
 				);
 	
 	$ships_p3	= array (
-					new Obstacle(array ('name' => 'bateau de Raf', 'x' => 50, 'y' => 50, 'dir' => Game::NORTH)),
-					new Obstacle(array ('name' => 'bateau de Raf', 'x' => 51, 'y' => 50, 'dir' => Game::NORTH)),
-					new Obstacle(array ('name' => 'bateau de Raf', 'x' => 120, 'y' => 80, 'dir' => Game::WEST)),
-					new Obstacle(array ('name' => 'bateau de Raf', 'x' => 100, 'y' => 80, 'dir' => Game::EAST)),
-					new Obstacle(array ('name' => 'bateau de Raf', 'x' => 0, 'y' => 30, 'dir' => Game::WEST)),
-					new Obstacle(array ('name' => 'bateau de Raf', 'x' => 110, 'y' => 37, 'dir' => Game::WEST)),
+					new Obstacle(array ('name' => 'Ship of Raf', 'x' => 50, 'y' => 50, 'dir' => Game::NORTH)),
+					new Obstacle(array ('name' => 'Ship of Raf', 'x' => 51, 'y' => 50, 'dir' => Game::NORTH)),
+					new Obstacle(array ('name' => 'Ship of Raf', 'x' => 120, 'y' => 80, 'dir' => Game::WEST)),
+					new Obstacle(array ('name' => 'Ship of Raf', 'x' => 100, 'y' => 80, 'dir' => Game::EAST)),
+					new Obstacle(array ('name' => 'Ship of Raf', 'x' => 0, 'y' => 30, 'dir' => Game::WEST)),
+					new Obstacle(array ('name' => 'Ship of Raf', 'x' => 110, 'y' => 37, 'dir' => Game::WEST)),
 				);
 
 	$player1	= array (
@@ -62,7 +62,7 @@
 	$game->add_ship('2', $p2->getShips());
 	$game->add_ship('3', $p3->getShips());
 
-	echo '<h1><a href="main.php?preset=select&i=0&j=0">Let\'s kick some ass !</a></h1>';
+	echo '<h1><a href="main.php?preset=select&i=0&j=0">Ready to kick some ass !</a></h1>';
 	$player1 = serialize($p1);
 	$player2 = serialize($p2);
 	$save = serialize($game);

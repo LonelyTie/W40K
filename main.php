@@ -19,7 +19,7 @@ if (array_key_exists('pp', $_SESSION))
 	$pp = unserialize($_SESSION['pp']);
 function err($p) {
 	if ($p != "select" && $p != "ordre" && $p != "mouvement" && $p != "tir")
-		throw new Exception('On change pas le preset ! C est deja suffisament complique comme ca !');
+		throw new Exception('DO NOT CHANGE PRESET IT HARD ENOUGH LIKE THAT !');
 	return True;
 }
 ?>

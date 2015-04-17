@@ -20,7 +20,7 @@ echo "<br />";
 	$scope = $equip[0]->getScope( $dice );
 echo "<br />";
 	if ($scope == 0)
-		echo "Avec un chiffre de ".$dice." la portee n 'est pas suffisante ";
+		echo "With a digit of ".$dice." range is not enough. ";
 	else
 	{
 		$ennemy = $game->getInactive($p1, $p2);
@@ -28,7 +28,7 @@ echo "<br />";
 		$res = $equip[0]->check_target($ship->getCoords(), $game->getMap(), $ennemy->getId(), $scope);
 		$target = $ennemy->getShipObject($res['h'], $res['w']);
 			if ($res == false)
-				echo "Pas de cible a portee ma poule, essaye encore";
+				echo "No target in this range dude, try again...";
 			else
 			{
 				echo "You've hit the target with a wonderfull throw of ".$dice;
@@ -45,7 +45,7 @@ echo "<br />";
 		{
 			echo '<div id="info">';
 			echo "Targeted Ship : <br />";
-			echo "Navire : ".Frigate::TYPE."<br />";
+			echo "Spaceship : ".Frigate::TYPE."<br />";
 			echo "<br />PP: ".Frigate::PP."<br />";
 			echo "Length : ".Frigate::HEIGHT."<br />";
 		//	echo "Shield : ".$target->getShield()."<br />";
@@ -53,7 +53,7 @@ echo "<br />";
 			echo "Speed : ".Frigate::SPEED."<br />";
 			foreach ($target->getWeapon() as $elem)
 				echo "Weapon(s) :".$elem->getName()." <br />";
-			echo "Inertie : ".Frigate::MOVE."<br />";
+			echo "Inertia : ".Frigate::MOVE."<br />";
 		}
 		
 	}
@@ -61,8 +61,8 @@ echo "<br />";
 }
 else
 {
-	echo "Votre arme n est pas charge et vous n avez utilise aucun PP pour cette noble cause ! ";
-	echo "Fin du round";
+	echo "Your weapon is not charged and you have no PP left for this noble cause...";
+	echo "End of round";
 }
 
 ?>

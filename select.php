@@ -1,9 +1,9 @@
 <?php
 
 $color = $game->getActiveName();
-echo 'C est au tour du '.$color;
+echo 'It\'s '.$color.'\'s turn!';
 echo "<br />";
 echo "<br />";
-echo "Veuillez selectionner un navire pour commencer !";
+echo "Please select a spaceship to start !";
 
 ?>

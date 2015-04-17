@@ -9,5 +9,5 @@
 	echo "Speed : ".Frigate::SPEED."<br />";
 	foreach ($ship->getWeapon() as $elem)
 		echo "Weapon(s) :".$elem->getName()." <br />";
-	echo "Inertie : ".Frigate::MOVE."<br />";
+	echo "Inertia : ".Frigate::MOVE."<br />";
 ?>

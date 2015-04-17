@@ -1,0 +1,19 @@
+-- Ship ----------------------------------------------------------------------->
+Ship makes the spaceships!
+This class has a lot of protected attributes:
+	Name (modified by his son)
+	Shield : initialized to 0;
+	Sprite : Because this game has many chances to become fancy and famous! So
+		sprites !
+	Coord : (made by it's son)
+	id : A unique id for the ship.
+	ppspent : the power points spent by the player
+	moving : if the ship is stopped or not.
+	prevmov : The previous movements it mades to handle inertia
+	activated : To see if the  ship has been activated by the player so it will
+	not activate it anymore.
+	Weapon : An array with each type of weapon.
+
+All the function are about incrementing Power point, decrement it...
+East to understand.
+<-------------------------------------------------------------------------------

@@ -1,0 +1,14 @@
+-- Player --------------------------------------------------------------------->
+Each instance of the class player is a player.
+
+The have a protected id, name and list of ships as attributes.
+
+The public method alive return a boolean FALSE if the player hasn't any ship
+anymore.
+
+Method destroy_ship is called when the player loses a ship of his fleet. It
+destroys the ship from the memory of the game.
+
+getShipObject his a fancy method that takes all the information from the
+player's fleet and returns them.
+<-------------------------------------------------------------------------------

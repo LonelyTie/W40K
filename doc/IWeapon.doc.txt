@@ -1,0 +1,4 @@
+-- IWeapon -------------------------------------------------------------------->
+This interface contains all the abstracted method needed to make a nice weapon.
+
+<-------------------------------------------------------------------------------
