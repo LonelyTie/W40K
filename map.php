@@ -44,15 +44,10 @@ echo '<table>';
 					echo '<span style="width:6px; height:6px; padding: 0px; background-color: '.$color.';"><span>';
 				}
 			}
-			else if ($map[$i][$j] === 3)
+			else if ($map[$i][$j] == 3)
 			{
 				echo '<td id="obst" style="width:6px; height:6px; padding: 0px; background-color: black;">';
 				echo '<span style="width:6px; height:6px; padding: 0px; background-color: black;"><span>';
-			}
-			else
-			{
-				echo '<td id="active" style="width:6px; height:6px; padding: 0px;">';
-				echo '<span style="width:6px; height:6px; padding: 0px;"><span>';
 			}
 			echo '</td>';
 			$j++;

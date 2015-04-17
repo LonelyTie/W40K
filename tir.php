@@ -50,7 +50,7 @@ echo "<br />";
 			}
 		if ($res != False)
 		{
-			echo "<br />";
+			echo "Targeted Ship : <br />";
 			echo "Navire : ".Frigate::TYPE."<br />";
 			echo "<br />PP: ".Frigate::PP."<br />";
 			echo "Length : ".Frigate::HEIGHT."<br />";

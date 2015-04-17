@@ -67,8 +67,23 @@ $spend = 10 - $ship->getPpspent();
 	echo "Ready to move";
 ?>
 
+	<form action="move.php" method="post">
+		<input type="number" name="move" min="0">
+		<input type="submit" name="submit" value="Move">
+	</form>
+
+	<form action="turn.php" method="post">
+		<input type="hidden" name="side" value="left">
+		<input type="submit" name="submit" value="Turn Left">
+	</form>
+
+
+	<form action="turn.php" method="post">
+		<input type="hidden" name="side" value="right">
+		<input type="submit" name="submit" value="Turn Right">
+	</form>
 	<form action="main.php?preset=tir" method="post">
-		<input type="submit" name="submit" value="OK">
+		<input type="submit" name="submit" value="Go shooting people">
 	</form>
 
 </div>

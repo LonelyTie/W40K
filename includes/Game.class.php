@@ -102,7 +102,7 @@
 
 				if ($dir == self::NORTH)
 				{
-					while ($i < 4)
+					while ($i < $ship->getLength())
 					{
 						$this->_map[$y + $i][$x] = $player_id;
 						$i++;
@@ -110,7 +110,7 @@
 				}
 				else if ($dir == self::SOUTH)
 				{
-					while ($i < 4)
+					while ($i < $ship->getLength())
 					{
 						$this->_map[$y - $i][$x] = $player_id;
 						$i++;
@@ -118,7 +118,7 @@
 				}
 				else if ($dir == self::EAST)
 				{
-					while ($i < 4)
+					while ($i < $ship->getLength())
 					{
 						$this->_map[$y][$x - $i] = $player_id;
 						$i++;
@@ -126,7 +126,7 @@
 				}
 				else if ($dir == self::WEST)
 				{
-					while ($i < 4)
+					while ($i < $ship->getLength())
 					{
 						$this->_map[$y][$x + $i] = $player_id;
 						$i++;
@@ -142,12 +142,11 @@
 				$y		= $coords['y'];
 				$x		= $coords['x'];
 				$dir	= $coords['dir'];
-				echo $x;
 				$i		= 0;
 
 				if ($dir == self::NORTH)
 				{
-					while ($i < 4)
+					while ($i < $ship->getLength())
 					{
 						$this->_map[$y + $i][$x] = 0;
 						$i++;
@@ -155,7 +154,7 @@
 				}
 				else if ($dir == self::SOUTH)
 				{
-					while ($i < 4)
+					while ($i < $ship->getLength())
 					{
 						$this->_map[$y - $i][$x] = 0;
 						$i++;
@@ -163,7 +162,7 @@
 				}
 				else if ($dir == self::EAST)
 				{
-					while ($i < 4)
+					while ($i < $ship->getLength())
 					{
 						$this->_map[$y][$x - $i] = 0;
 						$i++;
@@ -171,7 +170,7 @@
 				}
 				else if ($dir == self::WEST)
 				{
-					while ($i < 4)
+					while ($i < $ship->getLength())
 					{
 						$this->_map[$y][$x + $i] = 0;
 						$i++;

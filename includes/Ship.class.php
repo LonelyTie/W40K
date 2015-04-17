@@ -68,7 +68,7 @@
 				$this->_shield--;
 		}	
 
-		protected function	setCoords($x, $y, $dir)
+		public function	setCoords($x, $y, $dir)
 		{
 			$coords = array ('x' => $x, 'y' => $y, 'dir' => $dir);
 			$this->_coords	= $coords;
