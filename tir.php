@@ -86,6 +86,7 @@ else
 					$game->invertActive();
 					$ship->resetPpspent();
 					unset($_SESSION['ship']);
+					unset($_SESSION['pp']);
 					echo '<form action="main.php?preset=select" method="post">';
 					echo '<input type="submit" name="sumit" value="Next round"/>';
 					echo '</form>';

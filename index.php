@@ -15,15 +15,23 @@
 
 	$ships_p1	= array (
 					new Frigate(array ('name' => 'bateau de Raf1', 'x' => 0, 'y' => 0, 'dir' => Game::NORTH)),
+					new Frigate(array ('name' => 'bateau de Raf1', 'x' => 40, 'y' => 90, 'dir' => Game::NORTH)),
+					new Frigate(array ('name' => 'bateau de Raf1', 'x' => 140, 'y' => 90, 'dir' => Game::NORTH)),
 				);
 
 	$ships_p2	= array (
 					new Frigate(array ('name' => 'bateau de Raf1', 'x' => 0, 'y' => 40, 'dir' => Game::NORTH)),
+					new Frigate(array ('name' => 'bateau de Raf1', 'x' => 80, 'y' => 10, 'dir' => Game::NORTH)),
+					new Frigate(array ('name' => 'bateau de Raf1', 'x' => 120, 'y' => 10, 'dir' => Game::NORTH)),
 				);
 	
 	$ships_p3	= array (
 					new Obstacle(array ('name' => 'bateau de Raf', 'x' => 50, 'y' => 50, 'dir' => Game::NORTH)),
+					new Obstacle(array ('name' => 'bateau de Raf', 'x' => 51, 'y' => 50, 'dir' => Game::NORTH)),
 					new Obstacle(array ('name' => 'bateau de Raf', 'x' => 120, 'y' => 80, 'dir' => Game::WEST)),
+					new Obstacle(array ('name' => 'bateau de Raf', 'x' => 100, 'y' => 80, 'dir' => Game::EAST)),
+					new Obstacle(array ('name' => 'bateau de Raf', 'x' => 0, 'y' => 30, 'dir' => Game::WEST)),
+					new Obstacle(array ('name' => 'bateau de Raf', 'x' => 110, 'y' => 37, 'dir' => Game::WEST)),
 				);
 
 	$player1	= array (

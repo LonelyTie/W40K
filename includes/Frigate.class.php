@@ -8,7 +8,7 @@
 		const	PP				= 10;
 		const	MOVE			= 4;
 		const	WIDTH			= 1;
-		const	HEIGHT			= 4;
+		const	HEIGHT			= 5;
 		const	MAXPC			= 5;
 	
 		protected $_pc	=	5;
