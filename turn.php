@@ -14,28 +14,71 @@ $p2 = unserialize($_SESSION['player2']);
 if (array_key_exists('ship', $_SESSION))
 	$ship = unserialize($_SESSION['ship']);
 
+$actif = $game->getActive($p1, $p2);
+$game->del_ship($actif->getId(), $ship);
 
 $coords = $ship->getCoords();
-$length = $ship->getLength() / 2;
+$length = $ship->getLength();
+$length = ($length / 2);
+
 if ($_POST['side'] == "left")
 {
-	$coords['x'] = $coords['x'] + $length;
-	$coords['y'] = $coords['y'] - $length;
-	$coords['dir'] = 4;
-	
+	if ($coords['dir'] == 1)
+	{
+		$coords['x'] = $coords['x'] - $length + 1;
+		$coords['y'] = $coords['y'] + $length;
+		$coords['dir'] = 8;
+	}
+	else if ($coords['dir'] == 2)
+	{
+		$coords['x'] = $coords['x'] + $length;
+		$coords['y'] = $coords['y'] - $length + 1;
+		$coords['dir'] = 4;
+	}
+	else if ($coords['dir'] == 4)
+	{
+		$coords['x'] = $coords['x'] - $length;
+		$coords['y'] = $coords['y'] - $length;
+		$coords['dir'] = 1;
+	}
+	else if ($coords['dir'] == 8)
+	{
+		$coords['x'] = $coords['x'] + $length - 1;
+		$coords['y'] = $coords['y'] + $length - 1;
+		$coords['dir'] = 2;
+	}
 }
-if ($_POST['side'] == "right")
+else if ($_POST['side'] == "right")
 {
-	$coords['x'] = $coords['x'] + $length;
-	$coords['y'] = $coords['y'] + $length;
-	$coords['dir'] = 8;
-
+	if ($coords['dir'] == 1)
+	{
+		$coords['x'] = $coords['x'] + $length;
+		$coords['y'] = $coords['y'] + $length;
+		$coords['dir'] = 4;
+	}
+	else if ($coords['dir'] == 2)
+	{
+		$coords['x'] = $coords['x'] - $length + 1;
+		$coords['y'] = $coords['y'] - $length + 1;
+		$coords['dir'] = 8;
+	}
+	else if ($coords['dir'] == 4)
+	{
+		$coords['x'] = $coords['x'] - $length;
+		$coords['y'] = $coords['y'] + $length - 1;
+		$coords['dir'] = 2;
+	}
+	else if ($coords['dir'] == 8)
+	{
+		$coords['x'] = $coords['x'] + $length - 1;
+		$coords['y'] = $coords['y'] - $length;
+		$coords['dir'] = 1;
+	}
 }
-$game->del_ship($ship->getId(), $ship);
 $ship->setCoords($coords['x'], $coords['y'], $coords['dir']);
-$game->add_ship($ship->getId(), array($ship));
+$game->add_ship($actif->getId(), array($ship));
 $ship->incPpspent($_POST['move']);
-print_r($coords);
+echo $length;
 
 
 
