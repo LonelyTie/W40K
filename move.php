@@ -26,7 +26,7 @@ if ($coords['dir'] == 4)
 	$ship->setCoords($coords['x'] + $_POST['move'], $coords['y'], $coords['dir']);
 if ($coords['dir'] == 8)
 	$ship->setCoords($coords['x'] - $_POST['move'], $coords['y'], $coords['dir']);
-$game->add_ship($ship->getId(), array($ship));
+$game->add_ship($actif->getId(), array($ship));
 $ship->incPpspent($_POST['move']);
 
 

@@ -57,7 +57,7 @@ $player1 = serialize($p1);
 $player2 = serialize($p2);
 $save = serialize($game);
 $_SESSION['save'] = $save;
-$_SESSION['ship'] = $currentShip;;
+$_SESSION['ship'] = $currentShip;
 $_SESSION['player1'] = $player1;
 $_SESSION['player2'] = $player2;
 ?>
