@@ -32,9 +32,10 @@ if ($coords['dir'] == 8)
 	$clone->setCoords($coords['x'] - $_POST['move'], $coords['y'], $coords['dir']);
 $game->add_ship($actif->getId(), array($clone));
 $clone->incPpspent($_POST['move']);
+$ship = $clone;
 
-if (isset($clone))
-	$currentShip = serialize($clone);
+if (isset($ship))
+	$currentShip = serialize($ship);
 $player1 = serialize($p1);
 $player2 = serialize($p2);
 $save = serialize($game);

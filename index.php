@@ -9,9 +9,9 @@
 	require("includes/Frigate.class.php");
 	require('includes/NavalSpear.class.php');
 
-	Game::$verbose = TRUE;
-	Player::$verbose = TRUE;
-	Ship::$verbose = TRUE;
+	Game::$verbose = False;
+	Player::$verbose = False;
+	Ship::$verbose = False;
 
 	$ships_p1	= array (
 					new Frigate(array ('name' => 'bateau de Raf1', 'x' => 0, 'y' => 0, 'dir' => Game::NORTH)),

@@ -48,7 +48,8 @@ if ($shield + $repair <= 10)
 else
 	echo "to many points attributed, nothing has been done. Keep playing";
 
-include("stat.php");
+if (isset($ship))
+	include("stat.php");
 
 if (!isset($_POST['pp']))
 {
