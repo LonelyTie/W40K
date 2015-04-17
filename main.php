@@ -13,6 +13,8 @@ $p1 = unserialize($_SESSION['player1']);
 $p2 = unserialize($_SESSION['player2']);
 if (array_key_exists('ship', $_SESSION))
 	$ship = unserialize($_SESSION['ship']);
+if (array_key_exists('pp', $_SESSION))
+	$pp = unserialize($_SESSION['pp']);
 ?>
 <!doctype html>
 <html lang="fr">
@@ -53,6 +55,9 @@ if (array_key_exists('preset', $_GET))
 
 if (isset($ship))
 	$currentShip = serialize($ship);
+
+if (isset($pp))
+	$currentpp = serialize($pp);
 $player1 = serialize($p1);
 $player2 = serialize($p2);
 $save = serialize($game);
@@ -60,6 +65,7 @@ $_SESSION['save'] = $save;
 $_SESSION['ship'] = $currentShip;
 $_SESSION['player1'] = $player1;
 $_SESSION['player2'] = $player2;
+$_SESSION['pp'] = $currentpp;
 ?>
 			</div>
 		</div>

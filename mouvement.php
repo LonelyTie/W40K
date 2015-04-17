@@ -50,10 +50,11 @@ else
 
 include("stat.php");
 
-
-
-$str = serialize($_POST);
-$_SESSION['pp'] = $str;
+if (!isset($_POST['pp']))
+{
+	$str = serialize($_POST);
+	$_SESSION['pp'] = $str;
+}
 
 ?>
 
