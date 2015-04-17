@@ -17,22 +17,24 @@ if (array_key_exists('ship', $_SESSION))
 
 $coords = $ship->getCoords();
 $actif = $game->getActive($p1, $p2);
+$inactif = $game->getInactive($p1, $p2);
 $game->del_ship($actif->getId(), $ship);
+$clone = clone $ship;
+
+$actif->destroy_ship($ship->getId());
 if ($coords['dir'] == 1)
-	$ship->setCoords($coords['x'], $coords['y'] - $_POST['move'], $coords['dir']);
+	$clone->setCoords($coords['x'], $coords['y'] - $_POST['move'], $coords['dir']);
 if ($coords['dir'] == 2)
-	$ship->setCoords($coords['x'], $coords['y'] + $_POST['move'], $coords['dir']);
+	$clone->setCoords($coords['x'], $coords['y'] + $_POST['move'], $coords['dir']);
 if ($coords['dir'] == 4)
-	$ship->setCoords($coords['x'] + $_POST['move'], $coords['y'], $coords['dir']);
+	$clone->setCoords($coords['x'] + $_POST['move'], $coords['y'], $coords['dir']);
 if ($coords['dir'] == 8)
-	$ship->setCoords($coords['x'] - $_POST['move'], $coords['y'], $coords['dir']);
-$game->add_ship($actif->getId(), array($ship));
-$ship->incPpspent($_POST['move']);
+	$clone->setCoords($coords['x'] - $_POST['move'], $coords['y'], $coords['dir']);
+$game->add_ship($actif->getId(), array($clone));
+$clone->incPpspent($_POST['move']);
 
-
-
-if (isset($ship))
-	$currentShip = serialize($ship);
+if (isset($clone))
+	$currentShip = serialize($clone);
 $player1 = serialize($p1);
 $player2 = serialize($p2);
 $save = serialize($game);
