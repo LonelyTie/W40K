@@ -1,6 +1,6 @@
 <?php
-trait Dice
-{
+
+trait Dice{
 	private $_dice_list = array();
 
 	public function roll_the_dice($nb_dice)
@@ -20,7 +20,7 @@ trait Dice
 
 	public function reset_the_dice()
 	{
-		$this->_dice_list = 0;
+		$this->_dice_list = array();
 	}
 }
 

@@ -1,14 +1,13 @@
 <?php
-
-	class Frigate extends Ship
+	class Obstacle extends Ship
 	{
-		const	TYPE			= "Imperial_Frigate";
+		const	TYPE			= "Asteroides";
 		const	SPEED			= 15;
 
 		const	PP				= 10;
 		const	MOVE			= 4;
 		const	WIDTH			= 1;
-		const	HEIGHT			= 4;
+		const	HEIGHT			= 20;
 		const	MAXPC			= 5;
 	
 		protected $_pc	=	5;
@@ -22,14 +21,13 @@
 			$this->_weapon[] = new NavalSpear;
 
 			if (self::$verbose)
-				echo "New Frigate Ship: ".$this->_id." instanced<br>" . PHP_EOL;
+				echo "New Asteroides: ".$this->_id." instanced<br>" . PHP_EOL;
 		}
 						
 		function		__destruct()
 		{
 			if (self::$verbose)
-				echo "Frigate Ship: ".$this->_id." destructed<br>" . PHP_EOL;
+				echo "Asteroides: ".$this->_id." destructed<br>" . PHP_EOL;
 		}
 	}
-
 ?>

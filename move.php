@@ -13,43 +13,23 @@ $p1 = unserialize($_SESSION['player1']);
 $p2 = unserialize($_SESSION['player2']);
 if (array_key_exists('ship', $_SESSION))
 	$ship = unserialize($_SESSION['ship']);
-?>
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-	<link rel="stylesheet" href="css/style.css">
-</head>
-	<body>
-		<div id="content">
-			<div id="box">
-<?php
 
-	echo '<h1>'.Game::NAME.'</h1>';
-include('map.php');
-echo "<br />";
-echo "<br />";
-if (array_key_exists('preset', $_GET))
-{
-	if ($_GET['preset'] === 'select')
-		include('select.php');
-	if ($_GET['preset'] === 'ordre')
-	{
-		if (array_key_exists('i', $_GET))
-			$h = $_GET['i'];
-		if (array_key_exists('j', $_GET))
-			$w = $_GET['j'];
-		if ($active == "player1")
-			$ship = $p1->getShipObject($h, $w);
-		else
-			$ship = $p2->getShipObject($h, $w);
-		include('ordre.php');
-	}
-	if ($_GET['preset'] === 'mouvement')
-		include('mouvement.php');
-	if ($_GET['preset'] === 'tir')
-		include('tir.php');
-}
+
+$coords = $ship->getCoords();
+$actif = $game->getActive($p1, $p2);
+$game->del_ship($actif->getId(), $ship);
+if ($coords['dir'] == 1)
+	$ship->setCoords($coords['x'], $coords['y'] - $_POST['move'], $coords['dir']);
+if ($coords['dir'] == 2)
+	$ship->setCoords($coords['x'], $coords['y'] + $_POST['move'], $coords['dir']);
+if ($coords['dir'] == 4)
+	$ship->setCoords($coords['x'] + $_POST['move'], $coords['y'], $coords['dir']);
+if ($coords['dir'] == 8)
+	$ship->setCoords($coords['x'] - $_POST['move'], $coords['y'], $coords['dir']);
+$game->add_ship($ship->getId(), array($ship));
+$ship->incPpspent($_POST['move']);
+
+
 
 if (isset($ship))
 	$currentShip = serialize($ship);
@@ -60,8 +40,5 @@ $_SESSION['save'] = $save;
 $_SESSION['ship'] = $currentShip;;
 $_SESSION['player1'] = $player1;
 $_SESSION['player2'] = $player2;
+header("Location: main.php?preset=mouvement");
 ?>
-			</div>
-		</div>
-	</body>
-</html>
